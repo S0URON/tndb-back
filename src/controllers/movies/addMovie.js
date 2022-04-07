@@ -53,6 +53,7 @@ export async function addMovie(req, res) {
         const newMovie = {
             _id : movieId,
             title: body.title,
+            director: body.director,
             description: body.description,
             duration: body.duration,
             category: new mongoose.Types.ObjectId(body.category),
