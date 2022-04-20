@@ -44,7 +44,7 @@ export async function addReview(req, res) {
 
         await review.save();
 
-        return res.status(200).json({ success : true });
+        return res.status(200).json({ message : "done !" });
     } catch (error) {
         return res.status(500).json({ message: "unknown error occured" });
     }

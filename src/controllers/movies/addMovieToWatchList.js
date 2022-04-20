@@ -15,10 +15,12 @@ export async function addMovieToWatchList(req, res) {
         });
 
         const { error } = BodyScheme.validate(body);
-        if (error && error.details)
+        if (error && error.details) {
+            console.log(error.details);
             return res
                 .status(HttpStatus.BAD_REQUEST)
                 .json({ message: "movie_not_specified" });
+        }
 
         if (!mongoose.Types.ObjectId.isValid(body.movie))
             return res
@@ -39,7 +41,7 @@ export async function addMovieToWatchList(req, res) {
         });
 
         user.watchList.push(movie._id);
-        
+
         await user.save();
 
         return res.status(200).json({ message: "movie added to watchlist" });

@@ -65,7 +65,7 @@ export async function signUp(req, res) {
 
         await User.create(newUser);
 
-        return res.status(HttpStatus.CREATED).json({ success: true, id: newUser._id });
+        return res.status(HttpStatus.CREATED).json({ message : "signed up!" });
 
     } catch (error) {
         console.log(error)

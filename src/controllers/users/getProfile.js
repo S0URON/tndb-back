@@ -12,7 +12,10 @@ export async function getProfile(req, res) {
                 }
             },
             {
-                $unwind : "$watchList"
+                $unwind: {
+                    path: "$watchList",
+                    preserveNullAndEmptyArrays: true
+                }
             },
             {
                 $lookup : {
