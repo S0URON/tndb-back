@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js",
-    "dev": "nodemon --exec babel-node src/index.js",
+    "start": "nodemon --exec babel-node src/index.js",
     "db": "E:/mongodb/bin/mongod.exe --dbpath=E:/mongodc-data"
   },
   "author": "",
